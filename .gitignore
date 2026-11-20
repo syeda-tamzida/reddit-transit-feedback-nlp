@@ -1,13 +1,9 @@
-# data and outputs (not shared)
-*.csv
-*.jsonl
-*.xlsx
-*.parquet
-reddit_data/
-downloads/
-
-# private taxonomy definitions
+# taxonomy definitions (private, not part of this repository)
 taxonomy_v2.py
+
+# raw monthly downloads (about 9 GB each)
+downloads/
+*.parquet
 
 # environment
 .venv/

@@ -72,7 +72,22 @@ reddit_labels_v3.jsonl  ->  filter_feedback.py  (in taxonomy / outside taxonomy 
   (2016-02 covers only r/pittsburgh and r/transit).
 - The text in this dataset is lowercase with punctuation split into tokens; usernames are not kept.
 
-**No data, labels, or human annotations are included in this repository.**
+### Files included
+
+| File | Contents |
+|---|---|
+| `reddit_data/reddit_transit_YYYY-MM.csv` | Keyword-matched comments per month |
+| `reddit_transit_all.csv` | All months combined and cleaned (41,907 comments) |
+| `Reddit_Transit_Exploration.xlsx` | Keyword-rule exploration: comment types and places by city |
+| `pilot_300.csv` | Stratified pilot sample (294 comments, 21 per subreddit) |
+| `reddit_labels.jsonl`, `_v2`, `_v3` | GPT labels for three prompt versions (v1/v2: pilot rows 0-19, v3: rows 20-79) |
+| `reddit_request_pairs*.csv` | The same labels flattened to one row per request or concern |
+| `relevance.jsonl`, `reddit_transit_concerns.csv` | Relevance-filter test on 200 comments and the kept comments |
+| `discovered_categories.csv`, `concern_assignments.csv` | Category-discovery results on the first 23 outside-taxonomy concerns |
+| `Reddit_Hand_Coding_60.xlsx` | Blind hand-coding sheet for the 60-comment evaluation set (coding in progress) |
+
+The taxonomy definitions (`taxonomy_v2.py`) are not included. Reddit content remains subject to
+Reddit's terms; keep this repository private unless redistribution is permitted.
 
 ## Results so far
 
@@ -82,7 +97,7 @@ reddit_labels_v3.jsonl  ->  filter_feedback.py  (in taxonomy / outside taxonomy 
 | Keyword exploration | Keyword rules alone are a poor relevance filter: in a hand-read sample, roughly one third of keyword-flagged comments were real rider feedback |
 | Relevance filter (200-comment test) | 92 of 200 kept (46%); 48 of 60 decisions agree with the detailed labels; most disagreements were cases where the detailed labels were too generous |
 | Detailed labeling (60-comment evaluation set) | 19 in taxonomy, 12 outside taxonomy, 29 not relevant; 45 of 45 evidence quotes found in the comment text |
-| Outside-taxonomy concerns | Recurring themes include driver behaviour, personal safety at stops, fare payment, and system condition |
+| Category discovery (23 outside-taxonomy concerns, 14 groups) | Taxonomy-aware review proposed candidates such as transit safety and security, onboard operations and conduct, fare payment, and facility condition; rejected car congestion and bicycle law as not transit concerns; merged one near-duplicate. Most groups have 1-3 examples, so a larger sample is needed |
 
 Human coding of the 60-comment evaluation set and the full relevance run are in progress.
 
