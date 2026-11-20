@@ -131,6 +131,11 @@ file, `taxonomy_v2.py`, which is not part of this repository.
 - Training and evaluation labels come partly from GPT; human-coded comments are used only for testing.
 - Reddit is not a representative sample of transit riders.
 
+## License
+
+The code is released under the MIT License (see `LICENSE`). The license covers the code only;
+the Reddit comments in the data files remain subject to Reddit's terms.
+
 ## Author
 
 Syeda Tamzida Akter, Department of Civil, Environmental and Architectural Engineering,
